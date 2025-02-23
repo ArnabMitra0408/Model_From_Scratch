@@ -54,3 +54,11 @@ plt.show()
 # Feature selection demonstration
 important_features = np.where(model.weights != 0)[0]
 print(f"Selected features (non-zero weights): {important_features}")
+
+# Plot feature importance as a bar graph
+plt.figure(figsize=(10, 6))
+plt.bar(range(len(model.weights)), np.abs(model.weights), color='purple')
+plt.xlabel('Feature Index')
+plt.ylabel('Absolute Coefficient Value')
+plt.title('Feature Importance from Lasso Regression')
+plt.show()
